@@ -5,6 +5,8 @@ if(isset($_GET['acao'])){
   	$acao = 'index';
 }
 
+require "../model/CategoriaCrud.php";
+
 switch ($acao){
 	case 'index':
 		 $crud = new CategoriaCrud();
@@ -18,13 +20,13 @@ switch ($acao){
 
 	case 'show':
 		//echo 'Vai exibir o show.php - getCategoria(id) e exibir os dados em /views/categorias/show.php';
-		
-		 $id = new CategoriaCrud();
-		 $categorias = $crud->getCategorias($id);
+		 $id = $_GET['id'];
+		 $crud= new CategoriaCrud();
+		 $categoria = $crud->getCategoria($id);
 
 		 //echo 'Vai fazer o index - getCategorias() e exibir os dados usando a view /views/categorias/index.php';
 		 include '../views/templates/cabecalho.php';
-         include '../views/categorias/index.php';
+         include '../views/categorias/show.php';
          include '../views/templates/rodape.php';
 		break;	
 

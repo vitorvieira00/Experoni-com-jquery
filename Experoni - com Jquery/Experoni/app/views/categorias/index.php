@@ -8,22 +8,23 @@
 	<h2> Listagem de Categorias </h2>
 
       <table>
+      <tr>
       	<th>       #           </th>
       	<th> Nome da Categoria </th>
-      </table>
+      </tr>
      <tbody>
   
-  <?php foreach ($Categorias as $Categoria) : ?>
+  <?php foreach ($categorias as $categoria) : ?>
   	
    <tr>
-    <td><?= $Categoria->getId()   ?> </td>
-    <td><?= $Categoria->getNome() ?> </td>
+    <td><?= $categoria->getId()   ?> </td>
+    <td><?= $categoria->getNome() ?> </td>
    </tr>
 
   <?php endforeach; ?>
 
   
      </tbody>
-
+  </table>
 </body>
 </html>

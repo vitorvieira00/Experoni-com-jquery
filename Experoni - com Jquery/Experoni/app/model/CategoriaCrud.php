@@ -23,7 +23,7 @@ class CategoriaCrud
         $listaCategorias = [];
         foreach ($categorias as $categoria){
             $cat = new Categoria();
-            $cat->setDescricao($categoria['descricao_categoria']);
+            $cat->setDescricao($categoria['desc_categoria']);
             $cat->setId($categoria['id_categoria']);
             $cat->setNome($categoria['nome_categoria']);
             $listaCategorias[] = $cat;
@@ -36,22 +36,20 @@ class CategoriaCrud
         $categoria = $this->conexao->query($sql);
         $categoria = $categoria->fetch(PDO::FETCH_ASSOC);
         $cat = new Categoria();
-        $cat->setDescricao($categoria['descricao_categoria']);
+        $cat->setDescricao($categoria['desc_categoria']);
         $cat->setId($categoria['id_categoria']);
         $cat->setNome($categoria['nome_categoria']);
         return $cat;
     }
     public function insertCategoria(Categoria $categoria){
-        INSERT INTO `categoria` (`id_categoria`, `nome_categoria`, `descricao_categoria`)
-        VALUES (NULL, 'categoria', 'descricao_categoria');
+        /*INSERT INTO `categoria` (`id_categoria`, `nome_categoria`, `descricao_categoria`)
+        VALUES (NULL, 'categoria', 'descricao_categoria');*/
 
         $nome = $categoria->getNome();
         $descricao = $categoria->getDescricao();
         $sql = "insert into categoria (nome_categoria, descricao_categoria) values ('$nome', '$descricao')";
         $this->conexao->exec($sql);
 
-        public function updateCategoria(Categoria $categoria){
-
-        }
+    
     }
 }

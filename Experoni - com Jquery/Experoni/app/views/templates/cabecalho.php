@@ -7,8 +7,9 @@
 <body>
 	<header>
 		<ul>
-			<li>Categorias</li>
-			<li>Produtos</li>
+			<li> <a href="../views/categorias/show.php">Categorias</a></button></li>
+
+			<li> <a href="../views/categorias/show.php">Produtos</a></button></li>
 		</ul>
 	</header>
 </body>
